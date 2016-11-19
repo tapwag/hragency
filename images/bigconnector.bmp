@@ -1,0 +1,117 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN"
+ "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+<!-- ViewCVS       -- http://viewcvs.sourceforge.net/
+     by Greg Stein -- mailto:gstein@lyra.org
+  -->
+
+<title>CVS log for org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp</title>
+</head>
+<body text="#000000" bgcolor="#ffffff">
+<table width="100&#37;" border=0 cellspacing=0 cellpadding=0>
+  <tr><td><h1>CVS log for org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp</h1></td><td align=right><img src="/images/Idea.jpg" alt="[LOGO]" border=0 width=120 height=86></td></tr></table>
+
+<a href="/viewcvs/indextech.cgi/org.eclipse.gmt/umlx/language/icons/#bigconnector.bmp"><img src="/icons/small/back.gif" alt="[BACK_ICON]" border=0 width=16 height=16></a>
+<b>Up to <a href="/viewcvs/indextech.cgi/#dirlist">[Technology_Project]</a> / <a href="/viewcvs/indextech.cgi/org.eclipse.gmt/#dirlist">org.eclipse.gmt</a> / <a href="/viewcvs/indextech.cgi/org.eclipse.gmt/umlx/#dirlist">umlx</a> / <a href="/viewcvs/indextech.cgi/org.eclipse.gmt/umlx/language/#dirlist">language</a> / <a href="/viewcvs/indextech.cgi/org.eclipse.gmt/umlx/language/icons/#dirlist">icons</a></b><p>
+<a href="#diff">Request diff between arbitrary revisions</a>
+<hr noshade>
+Default branch: MAIN
+<br>Bookmark a link to
+<a href="bigconnector.bmp?rev=HEAD&content-type=text/vnd.viewcvs-markup"
+><b>HEAD</b></a>
+/
+(<a href="/viewcvs/indextech.cgi/~checkout~/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp?rev=HEAD&content-type=image/bmp"
+ target="cvs_checkout"
+ onClick="window.open('/viewcvs/indextech.cgi/~checkout~/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp?rev=HEAD&content-type=image/bmp','cvs_checkout','resizeable=1,scrollbars=1 ');"
+><b>download</b></a>)
+<br>
+<hr size=1 noshade>
+Revision <b>1.2</b>
+, <i>Mon Aug 18 20:53:50 2003 UTC</i> (16 months, 1 week ago) by <i>ewillink</i>
+<br>Branch: <b><a href="bigconnector.bmp?only_with_tag=MAIN">MAIN</a></b>
+<br>CVS Tags: <b><a href="bigconnector.bmp?only_with_tag=HEAD">HEAD</a></b>
+<br>Changes since <b>1.1: +0 -0 lines</b>
+<br><b><i>FILE REMOVED</i></b>
+<pre>Upgrade for M-in,N-out,sequential,concurrent transforms without attributes
+</pre>
+<hr size=1 noshade>
+<a name="rev1.1"></a>
+<a name="MAIN"></a>
+Revision
+<a href="bigconnector.bmp?rev=1.1&content-type=text/vnd.viewcvs-markup"
+><b>1.1</b></a>
+/
+(<a href="/viewcvs/indextech.cgi/~checkout~/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp?rev=1.1&content-type=image/bmp"
+ target="cvs_checkout"
+ onClick="window.open('/viewcvs/indextech.cgi/~checkout~/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp?rev=1.1&content-type=image/bmp','cvs_checkout','resizeable=1,scrollbars=1 ');"
+><b>download</b></a>)
+/
+(<a href="/viewcvs/indextech.cgi/~checkout~/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp?rev=1.1&content-type=text/plain"
+ target="cvs_checkout"
+ onClick="window.open('/viewcvs/indextech.cgi/~checkout~/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp?rev=1.1&content-type=text/plain','cvs_checkout','resizeable=1,scrollbars=1 ');"
+><b>as text</b></a>)
+- <a href="/viewcvs/indextech.cgi/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp?annotate=1.1">annotate</a>
+- <a href="/viewcvs/indextech.cgi/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp?r1=1.1">[select for diffs]</a>
+, <i>Sun Jun  1 11:12:50 2003 UTC</i> (19 months ago) by <i>ewillink</i>
+<br>Branch: <b><a href="bigconnector.bmp?only_with_tag=MAIN">MAIN</a></b>
+<br>Diff
+<pre>Initial prototype state
+</pre>
+<a name=diff><hr noshade>
+This form allows you to request diffs between any two revisions of
+a file. You may select a symbolic revision name using the selection
+box or you may type in a numeric name using the type-in text box.
+</a><p>
+<form method="GET" action="/viewcvs/indextech.cgi/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp.diff" name="diff_select">
+Diffs between
+<select name="r1">
+<option value="text" selected>Use Text Field</option>
+<option value="0.1:MAIN">MAIN</option>
+<option value="1.2:HEAD">HEAD</option>
+</select>
+<input type="TEXT" size="12" name="tr1" value="1.1"  onChange="document.diff_select.r1.selectedIndex=0">
+and
+<select name="r2">
+<option value="text" selected>Use Text Field</option>
+<option value="0.1:MAIN">MAIN</option>
+<option value="1.2:HEAD">HEAD</option>
+</select>
+<input type="TEXT" size="12" name="tr2" value="1.2"  onChange="document.diff_select.r2.selectedIndex=0">
+<br>Type of Diff should be a
+<select name="diff_format"
+onchange="submit()"
+>
+<option value="h" selected>Colored Diff</option>
+<option value="H">Long Colored Diff</option>
+<option value="u">Unidiff</option>
+<option value="c">Context Diff</option>
+<option value="s">Side by Side</option>
+</select>
+<input type=submit value="  Get Diffs  "></form>
+<hr noshade>
+<a name=branch><form method="GET" action="/viewcvs/indextech.cgi/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp">
+
+View only Branch:
+<select name="only_with_tag"
+onchange="submit()"
+>
+<option value="">Show all branches</option>
+<option >MAIN</option>
+</select>
+<input type=submit value="  View Branch  "></form></a>
+<a name=logsort>
+<form method="GET" action="/viewcvs/indextech.cgi/org.eclipse.gmt/umlx/language/icons/Attic/bigconnector.bmp">
+
+Sort log by:
+<select name="logsort"
+onchange="submit()"
+>
+<option value="cvs">Not sorted</option>
+<option value="date" selected>Commit date</option>
+<option value="rev">Revision</option>
+</select><input type=submit value="  Sort  "></form></a>
+<hr noshade><table width="100&#37;" border=0 cellpadding=0 cellspacing=0><tr>
+<td align=left><address><a href="mailto:webmaster@eclipse.org">help@eclipse.org</a></address></td>
+<td align=right>Powered by<br><a href="http://viewcvs.sourceforge.net/">ViewCVS 0.7</a>
+</td></tr></table>
+</body></html>

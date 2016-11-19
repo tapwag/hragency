@@ -1,0 +1,59 @@
+body {bgcolor: #F9FFE0;}
+
+h1 {color:#000083;
+    font-family:Sui Generis;
+    font-size:26px;
+    font-weight:bold;}
+  
+h2 {color:#000083;
+    font-family:Bitsream Vera Serif Bold;
+    font-size:20px;
+    font-weight:bold;}
+	   
+h3 {color:#000083;
+    font-family:Bitsream Vera Serif Bold;
+    font-size:16px;
+    font-weight:bold;}
+    
+    
+p  {color:#000083;
+    font-family:Bitsream Vera Serif Bold;
+    font-size:14px;}
+  
+a   {color:#8D0E21;
+     font-family:Suse Sans;
+     font-size:12px;
+     font-weight:bold;
+     text-decoration:none;}    
+      
+font {color:#000083; 
+      font-family:Suse Sans;
+      font-size:12px;}
+      
+b    {color:#000083;
+      font-size:8px;
+      font-weight:normal;}
+      
+      
+button {font-size:8px;}
+
+    
+#eins {font-size:4px;}
+
+#zwei {color:#000083;
+       font-family:serif;
+       font-size:bigger;}
+
+#drei {color:#000083;
+       font-size:15px;}
+
+#vier {color:black;
+       font-size:10px;} 
+       
+#funf {color:#000083;
+       font-size:4px;
+       font-weight:normal;}
+       
+#sechs {color:#000083;
+       font-size:10px;}
+

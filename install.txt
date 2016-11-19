@@ -1,0 +1,63 @@
+*************************************************************************************************
+***                hragency - the software for recruitment agencies (version 0.4)             ***
+***     This software has been developped from and for EMI Consulting Group Switzerland       ***
+***                 It is under the GPL (see gpl.txt) and free of licence fee.                ***
+***            You are welcome to make donation over the sourceforge paypal system            ***
+***                                    at www.sourceforge.net                                 ***
+***                                                                                           ***
+***     For any request, help or input, please feel free to contact EMI Consulting Group      ***
+***                  at www.emi-consulting.ch or by phone at +41 21 345 00 06                 ***
+***                            during normal business hours GMT +1                            ***
+***                   Thank you for the interest you have in our software !                   ***
+*************************************************************************************************
+
+1. 	Requirements
+1.1	Client side:	Any paltform will do, software is written in PHP 4.3 and is 
+			therefore accessible with any webbrowser. The software has been
+			tested with Konqueror, Mozilla and Firefox, IE will follow soon.
+			Design was made for 1024x768 screen size.
+1.2	Server side:	Running Apache webserver with PHP support,
+			MySql database needed, support for other databases will follow.
+			For IIS installation please read section IIS below.
+			(The development has been done under SUSE Linux 9.2 Professional
+			with kernel linux 2.6.8-24.5-default i686 using Quanta software 
+			and was tested with Apache/2.0.50 (Linux/SUSE), PHP/4.3.8 and
+			mysql version 4.0.21.)
+
+2.	Installation
+2.1	Download	If not yet done, got the latest release at 
+			http://sourceforge.net/project/showfiles.php?group_id=128456
+2.2	Install		a) Unzip/Untar the hragency-0.x.tar.gz archive to to root folder of 
+			   your webserver.
+			b) Create an mysql database with any name and user rights.
+			c) With any sql tool (we recommend phpMyAdmin: execute the script 
+			   hragency-install.sql in /hragency/scripts/ to install tables 
+			   without demo data or execute the script hragency-install-withdemodata.sql 
+			   in /hragency/scripts/ to install tables with demo data.   
+			d) Modify the dbconnect.php file in /hragency/include/ to fit to your 
+			   configuration
+			e) Modify the config.php file in /hragency/admin/ to fit language
+			   base settings (fr = french, de = german, en = english)
+
+3.	IIS		For installing on a IIS web server, please modify the global
+			variables $DOCUMENT_ROOT and $_SESSION with the necessary
+			variables on IIS to retreive document path of your web server 
+			($DOCUMENT_ROOT) and to pass the language identifier to the web-
+			browser ($_SESSION). The software should then work correctly.
+			Please be aware, that the software was not tested in any manner on
+			IIS and that the original developers are not familier with this 
+			environnement.
+			
+4.	Questions	Please adress any questions, input, but report, features wishes 
+			or else in the correspondent forums on 
+			http://sourceforge.net/forum/?group_id=128456.
+		
+				
+		Thanks for your interest and good luck!
+		Very best regards
+		
+		Oliver Gasser
+		oliver.gasser at emi-consulting dot ch
+			
+
+
