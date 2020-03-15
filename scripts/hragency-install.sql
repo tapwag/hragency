@@ -34,7 +34,7 @@ CREATE TABLE `contact` (
   `email` varchar(50) NOT NULL default '',
   `birthdate` date NOT NULL default '0000-00-00',
   PRIMARY KEY  (`idcont`)
-) TYPE=MyISAM AUTO_INCREMENT=15 ;
+) ENGINE=MyISAM AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ CREATE TABLE `enterprise` (
   `fax` varchar(20) NOT NULL default '',
   `site` varchar(50) NOT NULL default '',
   PRIMARY KEY  (`identr`)
-) TYPE=MyISAM AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,7 @@ CREATE TABLE `login` (
   `login` varchar(20) NOT NULL default '',
   `pwd` varchar(20) NOT NULL default '',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ CREATE TABLE `role` (
   `idrole` int(11) NOT NULL auto_increment,
   `role` varchar(50) NOT NULL default '',
   PRIMARY KEY  (`idrole`)
-) TYPE=MyISAM AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -105,4 +105,4 @@ CREATE TABLE `vacancy` (
   `typecontr` varchar(50) NOT NULL default '',
   `datereg` date NOT NULL default '0000-00-00',
   PRIMARY KEY  (`idvac`)
-) TYPE=MyISAM AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM AUTO_INCREMENT=6 ;
