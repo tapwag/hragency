@@ -1,20 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 2.6.0-rc2
--- http://www.phpmyadmin.net
--- 
--- Host: localhost
--- Generation Time: Jan 12, 2005 at 03:36 PM
--- Server version: 4.0.21
--- PHP Version: 4.3.8
--- 
--- hragency v0.4 install script 
---  without demo data
--- 
--- 
--- Database: `hragency`
--- 
-
--- --------------------------------------------------------
+-- ------------------------------------------------------
 
 -- 
 -- Table structure for table `contact`
@@ -34,7 +18,7 @@ CREATE TABLE `contact` (
   `email` varchar(50) NOT NULL default '',
   `birthdate` date NOT NULL default '0000-00-00',
   PRIMARY KEY  (`idcont`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -53,7 +37,7 @@ CREATE TABLE `enterprise` (
   `fax` varchar(20) NOT NULL default '',
   `site` varchar(50) NOT NULL default '',
   PRIMARY KEY  (`identr`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -70,7 +54,7 @@ CREATE TABLE `login` (
   `login` varchar(20) NOT NULL default '',
   `pwd` varchar(20) NOT NULL default '',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -82,7 +66,7 @@ CREATE TABLE `role` (
   `idrole` int(11) NOT NULL auto_increment,
   `role` varchar(50) NOT NULL default '',
   PRIMARY KEY  (`idrole`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -105,4 +89,4 @@ CREATE TABLE `vacancy` (
   `typecontr` varchar(50) NOT NULL default '',
   `datereg` date NOT NULL default '0000-00-00',
   PRIMARY KEY  (`idvac`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB AUTO_INCREMENT=6 ;
