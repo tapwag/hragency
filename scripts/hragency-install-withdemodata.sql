@@ -34,7 +34,7 @@ CREATE TABLE `contact` (
   `email` varchar(50) NOT NULL default '',
   `birthdate` date NOT NULL default '0000-00-00',
   PRIMARY KEY  (`idcont`)
-) ENIGNE=InnoDB AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB AUTO_INCREMENT=15 ;
 
 -- 
 -- Dumping data for table `contact`
