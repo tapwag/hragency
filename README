@@ -1,0 +1,8 @@
+This is an effort to port 'hragency' to a later PHP version, 
+currently 8.0
+
+ * Efforts
+	- Consolidation of configuration files
+	- Rework of MySQL Queries
+	- Template system
+	- Reactivation language switcher for user and admin
