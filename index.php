@@ -29,10 +29,13 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 
 <?php 
+// echo $_SERVER['SERVER_NAME'];
 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."header.php");
-require($path_lang."langselect.php");
+require($_SERVER['DOCUMENT_ROOT']."/hragency/include/config.php");
+require($_SERVER['DOCUMENT_ROOT']."/hragency/header.php");
+require($_SERVER['DOCUMENT_ROOT']."/hragency/language/langselect.php");
+include($_SERVER['DOCUMENT_ROOT']."/hragency/language/en.php");
+include($_SERVER['DOCUMENT_ROOT']."/hragency/include/dbconnect.php");
 
 ?>
 
@@ -48,13 +51,10 @@ require($path_lang."langselect.php");
       
       	<?php
 	//modified vac-list.php to show only the last entries and propose link to full list
-
-	include($path_include."dbconnect.php");
-
 	
 	$query = "SELECT idvac, title, cat, skill1, skill2, place FROM vacancy WHERE DATE_SUB( CURDATE( ) , INTERVAL 2 
 DAY ) <= datereg" ;
-	$result = mysql_query($query) or die(mysql_error());
+	$result = mysqli_query($query) or die(mysql_error());
 
 
 	echo "<h3>".$vshortlist_title."</h>";

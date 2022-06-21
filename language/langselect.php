@@ -1,34 +1,34 @@
 <?php
 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-
-//require($path_lang."langselect.php");
+## require($_SERVER['DOCUMENT_ROOT']."/hragency/include/config.php");
+## require($_SERVER['DOCUMENT_ROOT']."/hragency/language/langselect.php");
 
 /*
-$_SESSION['lang'] = 'en';
-include($path_lang.$_SESSION['lang'].".php");
+##$_SESSION['lang'] = 'en';
+## include($_SERVER['DOCUMENT_ROOT]."hragency/language/en.php");
 */
 //session_start();
 
 /*
-if ($langOK == "OK")
+##if ($langOK == "OK")
 
-{
+##{
    
-   unset($_SESSION['lang']);   
-   $_SESSION['lang'] = $lang;
+##   unset($_SESSION['lang']);   
+##   $_SESSION['lang'] = $lang;
    
-   include($path_lang.$_SESSION['lang'].".php");
-   //echo $lang;
+##   include($path_lang.$_SESSION['lang'].".php");
+##   //echo $lang;
 }
-else
-{ 
-include($path_lang.$_SESSION['lang'].".php");
+##else
+##{ 
+## include($path_lang.$_SESSION['lang'].".php");
 
 
-}
+##}
 */
 
-include($path_lang.$_SESSION['lang'].".php");
+# include($path_lang.$_SESSION['lang'].".php");
 
 ?>
+

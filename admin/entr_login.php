@@ -10,9 +10,9 @@
 
 <?php 
 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."header.php");
-require($path_lang."langselect.php");
+require($_SERVER['DOCUMENT_ROOT']."/hragency/include/config.php");
+require($_SERVER['DOCUMENT_ROOT']."/hragency/header.php");
+require($_SERVER['DOCUMENT_ROOT']."/hragency/languages/langselect.php");
 
 ?>
 
