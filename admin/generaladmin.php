@@ -10,10 +10,10 @@
 
 <?php 
 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."header.php");
-require($path_lang."langselect.php");
-
+require("../include/config.php");
+require("../header.php");
+// require($path_lang."langselect.php");
+require("../language/en.php");
 ?>
 
 <table bgcolor="white" width="100%" height="550" border="1" >

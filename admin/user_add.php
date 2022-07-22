@@ -10,9 +10,10 @@
 
 
 <?php 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."/header.php");
-require($path_lang."/langselect.php");
+require('../include/config.php');
+require('../header.php');
+require('../language/langselect.php');
+require('../language/en.php');
 ?>
 
 <table bgcolor="white" width="100%" height="550" border="1" >
@@ -28,7 +29,7 @@ require($path_lang."/langselect.php");
       
   <h3><?php echo $vinsert_title;?></h3><br>
 
-<form action="/hragency/vacancies/vac_add_script.php" method="GET" name="form_vac_add">
+<form action="../vacancies/vac_add_script.php" method="GET" name="form_vac_add">
 <table>
   <tbody>  <?php echo $dd ;?>
     <tr>
@@ -37,11 +38,11 @@ require($path_lang."/langselect.php");
       //block for retreive enterprise list
         include($path_include."dbconnect.php");
       	$query = "SELECT identr, enterprise FROM enterprise";
-	$result = mysql_query($query) or die(mysql_error());
+	$result = mysqli_query($con, $query) or die(mysqli_error());
 
 	echo "<td><select name=enterprise size=3>";
 	
-	while ($row = mysql_fetch_array($result))
+	while ($row = mysqli_fetch_array($result))
 	  {
 	  echo "<option value=".$row["identr"].">".$row["enterprise"]."</option>"; 
 	  }  
@@ -118,4 +119,4 @@ require($path_lang."/langselect.php");
 </table>
  
 
- <? require($path."footer.php") ?>
+ <? require('../footer.php') ?>

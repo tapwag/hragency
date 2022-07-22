@@ -21,7 +21,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 <html>
 <head>
   <title>hragency</title>
-  <link rel="StyleSheet" type="text/css" href="/hragency/include/stylesheet.css">
+  <link rel="StyleSheet" type="text/css" href="/include/stylesheet.css">
 </head>
 <body>
 </body>
@@ -29,13 +29,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 
 <?php 
-// echo $_SERVER['SERVER_NAME'];
-
-require($_SERVER['DOCUMENT_ROOT']."/hragency/include/config.php");
-require($_SERVER['DOCUMENT_ROOT']."/hragency/header.php");
-require($_SERVER['DOCUMENT_ROOT']."/hragency/language/langselect.php");
-include($_SERVER['DOCUMENT_ROOT']."/hragency/language/en.php");
-include($_SERVER['DOCUMENT_ROOT']."/hragency/include/dbconnect.php");
+require('./include/config.php');
+require('./header.php');
+require('./language/langselect.php');
+include('./language/en.php');
+include('./include/dbconnect.php');
 
 ?>
 
@@ -47,15 +45,16 @@ include($_SERVER['DOCUMENT_ROOT']."/hragency/include/dbconnect.php");
     </tr>-->
     <tr>
       <td bgcolor="#E3EAF7" width="19%" height="3%" align="top"><?php echo "<h3>".$lmenu."</h>";?></td>
-      <td width="80%" colspan="1" rowspan="2" valign="top" align="center" ><font><?php echo "<br>".$welcome; ?></font><br><br>
+      <td width="80%" colspan="1" rowspan="2" valign="top" align="center" ><font>
+
+<?php echo "<br>".$welcome; ?></font><br><br>
       
       	<?php
 	//modified vac-list.php to show only the last entries and propose link to full list
 	
 	$query = "SELECT idvac, title, cat, skill1, skill2, place FROM vacancy WHERE DATE_SUB( CURDATE( ) , INTERVAL 2 
 DAY ) <= datereg" ;
-	$result = mysqli_query($query) or die(mysql_error());
-
+	$result = mysqli_query($con, $query) or die;
 
 	echo "<h3>".$vshortlist_title."</h>";
 	//create output table header
@@ -71,7 +70,7 @@ DAY ) <= datereg" ;
   
 	//calculation output table body
 	
-		  while ($row = mysql_fetch_array($result))
+		  while ($row = mysqli_fetch_array($result))
 		  {
 	     
 	      		  echo "<tr>";
@@ -84,9 +83,9 @@ DAY ) <= datereg" ;
 	  }    
 	echo "</tbody>";
 	echo "</table>";  
-	echo "<a href=/hragency/vacancies/vac_list.php>".$vlist."</a>";
+	echo "<a href=./vacancies/vac_list.php>".$vlist."</a>";
 
-	mysql_free_result($result);
+	mysqli_free_result($result);
 
 	?>    
       
@@ -103,8 +102,8 @@ DAY ) <= datereg" ;
       <!-- Menu items for every page-->
       <?php
       $query = "select * from vacancy";
-      $result = mysql_query($query);
-      $count = mysql_num_rows($result);
+      $result = mysqli_query($query);
+      $count = mysqli_num_rows($result);
       echo $openpos1."&nbsp;".$count."&nbsp;".$openpos2;
          
       ?>
@@ -119,5 +118,4 @@ DAY ) <= datereg" ;
   </tbody>
 </table>
  
-
- <? require($path."footer.php") ?>
+<?php require('footer.php') ?>

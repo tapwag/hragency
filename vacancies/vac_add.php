@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>hragency</title>
-  <link rel="StyleSheet" type="text/css" href="/hragency/include/stylesheet.css">
+  <link rel="StyleSheet" type="text/css" href="../include/stylesheet.css">
 </head>
 <body>
 </body>
@@ -10,9 +10,11 @@
 
 
 <?php 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."/header.php");
-require($path_lang."/langselect.php");
+require('../include/config.php');
+require('..//header.php');
+// require($path_lang."/langselect.php");
+require('../language/en.php');
+
 ?>
 
 <table bgcolor="white" width="100%" height="550" border="1" >
@@ -35,13 +37,13 @@ require($path_lang."/langselect.php");
       <td><font><?php echo $ename ;?></font></td>
       <?php
       //block for retreive enterprise list
-        include($path_include."dbconnect.php");
+        include('../include/dbconnect.php');
       	$query = "SELECT identr, enterprise FROM enterprise";
-	$result = mysql_query($query) or die(mysql_error());
+	$result = mysqli_query($con, $query) or die(mysqli_error());
 
 	echo "<td><select name=enterprise size=3>";
 	
-	while ($row = mysql_fetch_array($result))
+	while ($row = mysqli_fetch_array($result))
 	  {
 	  echo "<option value=".$row["identr"].">".$row["enterprise"]."</option>"; 
 	  }  
@@ -53,13 +55,13 @@ require($path_lang."/langselect.php");
       <td><font><?php echo $cname ;?></font></td>
       <?php
       //block for retreive contact list
-        include($path_include."dbconnect.php");
+        include('../include/dbconnect.php');
       	$query = "SELECT idcont, name FROM contact";
-	$result = mysql_query($query) or die(mysql_error());
+	$result = mysqli_query($con, $query) or die(mysqli_error());
 
 	echo "<td><select name=contact size=3>";
 	
-	while ($row = mysql_fetch_array($result))
+	while ($row = mysqli_fetch_array($result))
 	  {
 	  echo "<option value=".$row["idcont"].">".$row["name"]."</option>"; 
 	  }  
@@ -135,4 +137,4 @@ require($path_lang."/langselect.php");
 </table>
  
 
- <? require($path."footer.php") ?>
+ <?php include('../footer.php') ?>

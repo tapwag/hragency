@@ -11,9 +11,10 @@
 
 
 <?php 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-include($path."header.php");
-require($path_lang."langselect.php");
+require('../include/config.php');
+include('../header.php');
+require('../language/langselect.php');
+require('../language/en.php');
 ?>
 
 <table bgcolor="white" width="100%" height="550" border="1" >
@@ -30,10 +31,10 @@ require($path_lang."langselect.php");
   <?php
 
 
-include($path_include."dbconnect.php");
+include('../include/dbconnect.php');
 
 $query = "SELECT identr, enterprise, adr1, nap, city FROM enterprise";
-$result = mysql_query($query) or die(mysql_error());
+$result = mysqli_query($con, $query) or die(mysqli_error());
 
 
 echo "<h3>".$elist_title."</h>";
@@ -50,7 +51,7 @@ echo "<table border=1>
   
 //calculation output table body
 	
-	  while ($row = mysql_fetch_array($result))
+	  while ($row = mysqli_fetch_array($result))
 	  {
 	     
       		  echo "<tr>";
@@ -58,12 +59,12 @@ echo "<table border=1>
 		  echo "<td>".$row["adr1"]."</td>";
       		  echo "<td>".$row["nap"]."</td>";
       		  echo "<td>".$row["city"]."</td>";
-		  echo "<td><a href=/hragency/enterprises/entr_edit.php?id=".$row["identr"]."><img src=/hragency/images/configure.png alt=Modify</a></td>";
+		  echo "<td><a href=../enterprises/entr_edit.php?id=".$row["identr"]."><img src=/hragency/images/configure.png alt=Modify</a></td>";
     		  echo "</tr>";
 	  }    
 echo "</tbody>";
 echo "</table>";  
-echo "<a href=/hragency/enterprises/entr_add.php>".$eadd."</a>";
+echo "<a href=../enterprises/entr_add.php>".$eadd."</a>";
 
 mysql_free_result($result);
 
@@ -90,4 +91,4 @@ mysql_free_result($result);
 </table>
  
 
- <? require($path."footer.php"); ?>
+ <? require("../footer.php"); ?>

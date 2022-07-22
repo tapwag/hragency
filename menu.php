@@ -9,14 +9,14 @@
 	echo "<br>";*/
 	
 	
-	require($DOCUMENT_ROOT."/hragency/include/config.php");
-	include($path_include."dbconnect.php");
-	
-	$lang = $_SESSION['lang'];
+	require('./include/config.php');
+	include('./include/dbconnect.php');
+	require('./language/en.php');	
 	
 	//block for retreiving menu items
-	$query = "SELECT id, description FROM menu WHERE lang = '$lang' ";
-	$result = mysql_query($query) or die("error");
+	$con = mysqli_connect("localhost","root","MyN3wP4ssw0rd","hragency");
+	$query = "SELECT id, description FROM menu";
+	$result = mysqli_query($con, $query) or die("error");
 	
 	if ($result)
 	{

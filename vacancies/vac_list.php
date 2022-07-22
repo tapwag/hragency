@@ -11,9 +11,10 @@
 
 
 <?php 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-include($path."header.php");
-require($path_lang."langselect.php");
+require('../include/config.php');
+include('../header.php');
+//require('../language/langselect.php');
+require('../language/en.php');
 ?>
 
 <table bgcolor="white" width="100%" height="550" border="1" >
@@ -30,10 +31,10 @@ require($path_lang."langselect.php");
   <?php
 
 
-include($path_include."dbconnect.php");
+include('../include/dbconnect.php');
 
 $query = "SELECT idvac, title, cat, skill1, skill2, place FROM vacancy";
-$result = mysql_query($query) or die(mysql_error());
+$result = mysqli_query($con, $query) or die(mysqli_error());
 
 
 echo "<h3>".$vlist_title."</h>";
@@ -50,7 +51,7 @@ echo "<table border=1>
   
 //calculation output table body
 	
-	  while ($row = mysql_fetch_array($result))
+	  while ($row = mysqli_fetch_array($result))
 	  {
 	     
       		  echo "<tr>";
@@ -64,7 +65,7 @@ echo "<table border=1>
 echo "</tbody>";
 echo "</table>";  
 
-mysql_free_result($result);
+mysqli_free_result($result);
 
 ?>    
 <!-- end of fonction section-->

@@ -7,14 +7,14 @@
 </html>
  
  <?php
- include($_SERVER['DOCUMENT_ROOT']."/hragency/include/config.php");
- include($_SERVER['DOCUMENT_ROOT']."hragency/language/langselect.php");
+ include('../include/config.php');
+ include('../language/langselect.php');
 
 echo "
 <table width=100% bgcolor=#E3EAF7>
   <tbody>
     <tr>
-      <td><font id=eins>Disclaimer</font></td>
+      <td>Disclaimer</td>
     </tr>
   </tbody>
 </table>";

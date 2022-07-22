@@ -9,10 +9,10 @@
 
 
 <?php 
-
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."header.php");
-require($path_lang."langselect.php");
+require('../include/config.php');
+require('../header.php');
+require('../language/langselect.php');
+require('../language/en.php');
 
 ?>
 
@@ -27,7 +27,7 @@ require($path_lang."langselect.php");
       <td width="80%" colspan="1" rowspan="2" valign="top">
   <!--fontction block-->
 <?php
-    include($path_include."dbconnect.php");
+    include('../include/dbconnect.php');
     
     // retrieval from $_GET
     $id = $_GET["id"];
@@ -38,8 +38,8 @@ require($path_lang."langselect.php");
     echo "<h2>$entr_detail</h>";
     
     //retrieve of information
-    $result = mysql_query($query) or die(mysql_error());
-    $row = mysql_fetch_array($result);
+    $result = mysqli_query($con, $query) or die(mysqli_error());
+    $row = mysqli_fetch_array($result);
     
     //general table for showing enterprise details and offer list
     echo " 
@@ -89,7 +89,7 @@ require($path_lang."langselect.php");
     </tr>
   </tbody>
 </table>";
-    echo "<a href=/hragency/enterprises/entr_edit.php?id=".$row["identr"].">$e_edit_entr</a>";
+    echo "<a href=../enterprises/entr_edit.php?id=".$row["identr"].">Edit</a>";
     echo "  
 	  </td>
           <td>";
@@ -97,10 +97,10 @@ require($path_lang."langselect.php");
 //start of vac list section
  
 
-include($path_include."dbconnect.php");
+include('../include/inddbconnect.php');
 
 $query = "SELECT idvac, title, cat, skill1, skill2, place FROM vacancy where identr=$id";
-$result = mysql_query($query) or die(mysql_error());
+$result = mysqli_query($con, $query) or die(mysqli_error());
 
 
 //echo "<h3>".$vlist_title."</h>";
@@ -118,7 +118,7 @@ echo "<table border=1>
   
 //calculation output table body
 	
-	  while ($row = mysql_fetch_array($result))
+	  while ($row = mysqli_fetch_array($result))
 	  {
 	     
       		  echo "<tr>";
@@ -127,12 +127,12 @@ echo "<table border=1>
       		  echo "<td>".$row["skill1"]."</td>";
       		  echo "<td>".$row["skill2"]."</td>";
 		  echo "<td>".$row["place"]."</td>";
-		  echo "<td><a href=/hragency/vacancies/vac_edit.php?id=".$row["idvac"]."><img src=/hragency/images/configure.png alt=Modify</a></td>";
+		  echo "<td><a href=../vacancies/vac_edit.php?id=".$row["idvac"]."><img src=../images/configure.png alt=Modify</a></td>";
     		  echo "</tr>";
 	  }    
 echo "</tbody>";
 echo "</table>";  
-echo "<a href=/hragency/vacancies/vac_add.php>".$vadd."</a>";
+echo "<a href=../vacancies/vac_add.php>".$vadd."</a>";
 
 
 
@@ -151,7 +151,7 @@ echo "<a href=/hragency/vacancies/vac_add.php>".$vadd."</a>";
  //list all the contacts of this company
  
  $query = "SELECT idcont, name, firstname, nap, city, teldir, mobile, email FROM contact where identr='$id'";
-$result = mysql_query($query) or die(mysql_error());
+$result = mysqli_query($con, $query) or die(mysqli_error());
 
 
 echo "<br><h3>".$clist_title."</h>";
@@ -171,7 +171,7 @@ echo "<table border=1>
   
 //calculation output table body
 	
-	  while ($row = mysql_fetch_array($result))
+	  while ($row = mysqli_fetch_array($result))
 	  {
 	     
       		  echo "<tr>";
@@ -185,7 +185,7 @@ echo "<table border=1>
 	  }    
 echo "</tbody>";
 echo "</table>";  
-echo "<a href=/hragency/contacts/cont_add.php>".$c_add."</a>";
+echo "<a href=../contacts/cont_add.php>".$c_add."</a>";
 
 
 
@@ -211,4 +211,4 @@ echo "<a href=/hragency/contacts/cont_add.php>".$c_add."</a>";
 </table>
  
 
- <? require($path."footer.php") ?>
+ <? require('../footer.php') ?>

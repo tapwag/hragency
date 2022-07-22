@@ -10,9 +10,10 @@
 
 <?php 
 
-require($_SERVER['DOCUMENT_ROOT']."/hragency/include/config.php");
-require($_SERVER['DOCUMENT_ROOT']"header.php");
-require($_SERVER['DOCUMENT_ROOT']."langselect.php");
+require('./include/config.php');
+require('./header.php');
+require('./language/langselect.php');
+include('./language/en.php');
 
 ?>
 
@@ -49,4 +50,4 @@ require($_SERVER['DOCUMENT_ROOT']."langselect.php");
 </table>
  
 
- <? require($path."footer.php") ?>
+<?php require('./footer.php') ?>

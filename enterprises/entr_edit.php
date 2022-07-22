@@ -10,10 +10,10 @@
 
 <?php 
 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."header.php");
-require($path_lang."langselect.php");
-
+require('../include/config.php');
+require('../header.php');
+require('../language/langselect.php');
+require('../language/en.php');
 ?>
 
 <table bgcolor="white" width="100%" height="550" border="1" >
@@ -27,7 +27,7 @@ require($path_lang."langselect.php");
       <td width="80%" colspan="1" rowspan="2" valign="top">
   <!--fontction block-->
 <?php
-    include($path_include."dbconnect.php");
+    include('../include/dbconnect.php');
     
     // retrieval from $_GET
     $id = $_GET["id"];
@@ -38,8 +38,8 @@ require($path_lang."langselect.php");
     echo "<h2>$entr_detail_edit</h>";
     
     //retrieve of information
-    $result = mysql_query($query) or die(mysql_error());
-    $row = mysql_fetch_array($result);
+    $result = mysqli_query($con, $query) or die(mysql_error());
+    $row = mysqli_fetch_array($result);
     
     //table output construction
     echo "
@@ -89,9 +89,9 @@ require($path_lang."langselect.php");
     echo "<br><button type=submit name=editentr value=OK><b>$bedit</b></button></form>";
     
     
-    //echo "<a href=/hragency/enterprises/entr_edit_script.php?id=".$row["identr"].">Edit now</a>"; 
+    //echo "<a href=../enterprises/entr_edit_script.php?id=".$row["identr"].">Edit now</a>"; 
 
- mysql_free_result($result);
+ mysqli_free_result($result);
 
 ?> 
 

@@ -1,29 +1,45 @@
 <?php
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path_lang."langselect.php");
-require($path_include."dbconnect.php");
+require('../include/config.php');
+// require('../language/langselect.php');
+require("../include/dbconnect.php");
+require('../language/en.php');
+
 
 // varible attribution
 $user= $_POST[username];
 $pwd = $_POST[password];
 
-//determin which role the logged user has
+//determine which role the logged user has
 
-$query = "select * from login where login='$user'";
-$result = mysql_query($query) or die(mysql_error());
-$row = mysql_fetch_array($result);
+$con = mysqli_connect("localhost","root","MyN3wP4ssw0rd","hragency");
 
-
-if ($pwd == $row['pwd'] && $row['idrole'] == 1)
-{
-
-$redirect = "/hragency/admin/generaladmin.php";
-header("Location:".$redirect."?id=".$row['entrattach']); 
-
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
 }
-else
+
+// Perform query
+if ($result = mysqli_query($con, "SELECT * FROM login where login='$user'")) 
 {
-$redirect = "/hragency/index.php";
-header("Location: $redirect"); 
+  echo "Returned rows are: " . mysqli_num_rows($result);
+  $row = mysqli_fetch_array($result);
+
+  if ($pwd == $row['pwd'] && $row ['idrole'] == 1)  
+  {
+	  $redirect = "generaladmin.php";
+	  header("Location:".$redirect."?id=".$row['entrattach']);
+  }
+
+
+  else
+	{
+		$redirect = "../index.php";
+		header("Location: $redirect");
+	}
+
+  // Free result set
+  mysqli_free_result($result);
 }
+
+mysqli_close($con);
 ?>

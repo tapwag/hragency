@@ -10,9 +10,10 @@
 
 <?php 
 
-require($_SERVER['DOCUMENT_ROOT']."/hragency/include/config.php");
-require($_SERVER['DOCUMENT_ROOT']."/hragency/header.php");
-require($_SERVER['DOCUMENT_ROOT']."/hragency/languages/langselect.php");
+require('../include/config.php');
+require('../header.php');
+require('../language/langselect.php');
+require('../language/en.php');
 
 ?>
 
@@ -30,7 +31,7 @@ require($_SERVER['DOCUMENT_ROOT']."/hragency/languages/langselect.php");
 echo "
 <br><h3 align=center>".$log."</h><br><br>
 <table align=center border=1>
-  <form action=/hragency/admin/entr_login1.php method=post>
+  <form action=entr_login1.php method=post>
   <tbody>
     <tr>
       <td bgcolor=#E3EAF7>".$username."</td>
@@ -70,4 +71,4 @@ echo "
 </table>
  
 
- <? require($path."footer.php") ?>
+ // <? require("../footer.php") ?>

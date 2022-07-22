@@ -9,10 +9,10 @@
 
 
 <?php 
-
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."header.php");
-require($path_lang."langselect.php");
+$con = new mysqli('localhost', 'root', 'MyN3wP4ssw0rd', 'hragency');
+require('../include/config.php');
+require('../header.php');
+require('../language/en.php');
 
 ?>
 
@@ -27,7 +27,7 @@ require($path_lang."langselect.php");
       <td width="80%" colspan="1" rowspan="2" valign="top">
   <!--fontction block-->
 <?php
-    include($path_include."dbconnect.php");
+    include('../include/dbconnect.php');
     
     // retrieval from $_GET
     $id = $_GET["id"];
@@ -38,8 +38,8 @@ require($path_lang."langselect.php");
     echo "<h2>$vac_detail</h>";
     
     //retrieve of information
-    $result = mysql_query($query) or die(mysql_error());
-    $row = mysql_fetch_array($result);
+    $result = mysqli_query($con, $query) or die(mysqli_error());
+    $row = mysqli_fetch_array($result);
     
     //table output construction
     // here insert new detail fonct for vac.
@@ -76,15 +76,15 @@ require($path_lang."langselect.php");
       <td rowSpan=1 colspan=3>";
       //retreive enterprise name in table enterprise
       $que = "select * from enterprise where identr='$row[identr]'";
-       $res = mysql_query($que) or die(mysql_error());
-       $ro = mysql_fetch_array($res);
+       $res = mysqli_query($con, $que) or die(mysqli_error());
+       $ro = mysqli_fetch_array($res);
       echo $ro[enterprise];
       echo "
       </td>";
        //Retreive contact informations from table contact and insert in next table fields.
-      $quer = "select * from contact where idcont='$row[idcont]'";
-       $resu = mysql_query($quer) or die(mysql_error());
-       $roww = mysql_fetch_array($resu);
+       $query = "select * from contact where idcont='$row[idcont]'";
+       $resu = mysqli_query($con, $query) or die($con->error);
+       $rows = mysqli_fetch_array($resu);
     
       echo "
       <td><font>Name<font></td>
@@ -132,4 +132,4 @@ require($path_lang."langselect.php");
 </table>
  
 
- <? require($path."footer.php") ?>
+ <?php require('../footer.php') ?>

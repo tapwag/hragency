@@ -1,7 +1,7 @@
 <?php
 
-## require($_SERVER['DOCUMENT_ROOT']."/hragency/include/config.php");
-## require($_SERVER['DOCUMENT_ROOT']."/hragency/language/langselect.php");
+## require('./include/config.php');
+## require('./language/langselect.php');
 
 /*
 ##$_SESSION['lang'] = 'en';

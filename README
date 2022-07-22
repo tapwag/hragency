@@ -1,8 +1,27 @@
 This is an effort to port 'hragency' to a later PHP version, 
-currently 8.0
+currently 8.0 while making some adjustments.
 
  * Efforts
-	- Consolidation of configuration files
+	- Consolidation of configuration files and MySQL Credentials
 	- Rework of MySQL Queries
-	- Template system
 	- Reactivation language switcher for user and admin
+
+ * Desgin Issues
+	- Template system for different page layouts
+	- Responsive Design
+	- Menus on Top of Header with Rollover displaying functions
+ * Features
+	- Installer
+
+ * Security
+	- Have Passwords encrypted to latest security standards
+
+
+MariaDB [hragency]> SELECT * FROM login;
++----+--------+--------+-----------+------------+----------+-----------+
+| id | idrole | name   | firstname | entrattach | login    | pwd       |
++----+--------+--------+-----------+------------+----------+-----------+
+|  1 |      1 | Gasser | Oliver    |         10 | gasserol | 37313731  |
+|  3 |      2 | Bronze | Ricardo   |         11 | ricardo  | ricardo82 |
++----+--------+--------+-----------+------------+----------+-----------+
+2 rows in set (0.009 sec)

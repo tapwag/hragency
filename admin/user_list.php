@@ -11,9 +11,12 @@
 
 
 <?php 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-include($path."header.php");
-require($path_lang."langselect.php");
+require('../include/config.php');
+include('../header.php');
+// require($path_lang."langselect.php");
+require('../language/en.php');
+$con = new mysqli('localhost','root', 'MyN3wP4ssw0rd', 'hragency');
+
 ?>
 
 <table bgcolor="white" width="100%" height="550" border="1" >
@@ -30,10 +33,10 @@ require($path_lang."langselect.php");
   <?php
 
 
-include($path_include."dbconnect.php");
+include('../include/dbconnect.php');
 
 $query = "SELECT idvac, title, cat, skill1, skill2, place FROM vacancy";
-$result = mysql_query($query) or die(mysql_error());
+$result = mysqli_query($con, $query) or die($con->error);
 
 
 echo "<h3>".$vlist_title."</h>";
@@ -50,13 +53,13 @@ echo "<table border=1>
   
 //calculation output table body
 	
-	  while ($row = mysql_fetch_array($result))
+	  while ($row = mysqli_fetch_array($result))
 	  {
 	     
       		  echo "<tr>";
 		  echo "<td>".$row["cat"]."</td>";
-		  echo "<td>"."<a href="."vac_detail.php?id=".$row["idvac"].">".$row["title"]."</a>"."</td>";
-      		  echo "<td>".$row["skill1"]."</td>";
+		  echo "<td>"."<a href="."../vacancies/vac_detail.php?id=".$row["idvac"].">".$row["title"]."</a>"."</td>";
+		  echo "<td>".$row["skill1"]."</td>";
       		  echo "<td>".$row["skill2"]."</td>";
 		  echo "<td>".$row["place"]."</td>";
     		  echo "</tr>";
@@ -89,4 +92,4 @@ mysql_free_result($result);
 </table>
  
 
- <? require($path."footer.php"); ?>
+ <? require('../footer.php'); ?>

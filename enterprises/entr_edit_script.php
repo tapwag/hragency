@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>hragency</title>
-  <link rel="StyleSheet" type="text/css" href="/hragency/include/stylesheet.css">
+  <link rel="StyleSheet" type="text/css" href="../include/stylesheet.css">
 </head>
 <body>
 </body>
@@ -13,10 +13,11 @@
 
 
 <?php 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."header.php");
-require($path_lang."langselect.php");
-require($path_include."dbconnect.php");
+require('../include/config.php');
+require('../header.php');
+require('../language/langselect.php');
+require('../include/dbconnect.php');
+require('../language/en.php');
 ?>
 
 <table bgcolor="white" width="100%" height="550" border="1" >
@@ -40,14 +41,14 @@ $query = "update enterprise set enterprise = '$entr', adr1 = '$adr1', adr2 = '$a
  
 //$query = "insert into enterprise (identr,enterprise,adr1,adr2,nap,city,telcentr,fax,site) values ('', '$entr', '$adr1', '$adr2', '$nap', '$city', '$telcentr', '$fax', '$site')";
 
-mysql_query($query);
+mysqli_query($con, $query);
 echo "<font>$e_entr_edit</font>";
 
 
 //}
 
 echo "<br>";
-echo "<a href=/hragency/enterprises/entr_list.php><font>$elink_list</font></a>";
+echo "<a href=entr_list.php><font>$elink_list</font></a>";
 
 
 ?>    

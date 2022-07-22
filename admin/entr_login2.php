@@ -10,10 +10,10 @@
 
 <?php 
 
-require($DOCUMENT_ROOT."/hragency/include/config.php");
-require($path."header.php");
-require($path_lang."langselect.php");
-
+require('../include/config.php');
+require('../header.php');
+// require('../language/langselect.php');
+require('../language/en.php');
 ?>
 
 <table bgcolor="white" width="100%" height="550" border="1" >
@@ -30,7 +30,7 @@ require($path_lang."langselect.php");
 echo "
 <br><h3 align=center>".$logerror."</h><br><br>
 <table align=center border=1>
-  <form action=/hragency/admin/entr_login1.php method=post>
+  <form action=../admin/entr_login1.php method=post>
   <tbody>
     <tr>
       <td bgcolor=#E3EAF7>".$username."</td>
